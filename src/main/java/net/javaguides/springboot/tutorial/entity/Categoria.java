@@ -13,24 +13,18 @@ import javax.persistence.OneToMany;
 import javax.validation.constraints.NotBlank;
 
 @Entity
-public class Entrada {
+public class Categoria {
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 	
-	@NotBlank(message = "El Título es obligatorio")
-    @Column(name = "titulo")
-    private String titulo;
-    
-    @NotBlank(message = "Coloca algún Contenido")
-    @Column(name = "contenido")
-    private String contenido;
-
-    
-    @OneToMany(
-    		cascade = CascadeType.ALL,
-            orphanRemoval = true
-    		)
-    private List<Comentario> comentarios = new ArrayList<>();
-    
+	 @NotBlank(message = "El Nombre es obligatorio")
+	    @Column(name = "nombre")
+	    private String name;
+	 
+	 @OneToMany(
+	    		cascade = CascadeType.ALL,
+	            orphanRemoval = true
+	    		)
+	    private List<Entrada> Entradas = new ArrayList<>();
 }

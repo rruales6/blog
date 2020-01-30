@@ -13,7 +13,25 @@ public class Comentario {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 	
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getContenido() {
+		return contenido;
+	}
+
+	public void setContenido(String contenido) {
+		this.contenido = contenido;
+	}
+
 	@NotBlank(message = "El comentario no puede estar vacio")
     @Column(name = "contenido")
     private String contenido;
+	
+	
 }

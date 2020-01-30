@@ -39,6 +39,12 @@ public class Usuario {
     private List<Comentario> comentarios = new ArrayList<>();
     
     
+    @OneToMany(
+    		cascade = CascadeType.ALL,
+            orphanRemoval = true
+    		)
+    private List<Entrada> entradas = new ArrayList<>();
+    
     
 
     
